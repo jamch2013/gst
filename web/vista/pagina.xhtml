@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/estilosEmplo.css"> </link>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+    <h:form id="registroUsuario">
+            <h:outputLabel for="txtNombre" value="Nombre" />
+            <h:inputText id="txtNombre" required="true" 
+                         requiredMessage="Este campo es requerido"
+                         validatorMessage="Formato incorrecto, minímo 3 caracteres"
+                         value="#{personasBean.nombre}" />
+            <h:outputLabel for="txtDocumento" value="Numero Documento"/>
+            
+            <h:inputText id="txtDocumento" required="true"
+                         requiredMessage="Este campo es requerido"
+                         validatorMessage="Minimo 8 caracteres y solo números"
+                         value="#{personasBean.numeroDocumento}"/>
+            
+            <h:outputLabel for="email" value="Email" />
+            <h:inputText id="txtEmail" required="true"  requiredMessage="Este campo es requerido" value="#{personasBean.numeroDocumento}"/>
+            
+            <h:message for="txtDocumeto" style="color: red"/>
+            <h:commandButton action="#{personasBean.cambiarPagina()}" value="Registrar Usuario"/>
+            
+                         
+        </h:form>
+                         
+      
+    </h:body>
+</html>  
+
